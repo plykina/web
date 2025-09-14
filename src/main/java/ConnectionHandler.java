@@ -26,12 +26,9 @@ public class ConnectionHandler {
     private static final String HTTP_BODY_DOWNLOAD = "This is a text file for download" + "\n";
 
     private static final String HTTP_HEADERS_DOWNLOAD = "HTTP/1.1 200 OK\n" +
-            "Date: Mon, 08 Sep 2025 11:08:55 +0200\n" +
-            "HttpServer: Simple Webserver\n" +
-            "Content-Length: " + HTTP_BODY_DOWNLOAD.length() + "\n" +
-            "Content-Type: application/pdf\n" +
-            "Content-Disposition: attachment; filename=download.txt\n";
-
+            "Content-Type: application/octet-stream\n" +
+            "Content-Disposition: attachment; filename=\"my-file.txt\"\n" +
+            "Content-Length: " + HTTP_BODY_DOWNLOAD.length() + "\n";
     private static final String HTTP_BODY_JSON = "{\"success\": true, \"message\": \"Hello from server!\"}" + "\n";
 
     private static final String HTTP_HEADERS_JSON = "HTTP/1.1 200 OK\n" +
